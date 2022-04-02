@@ -30,19 +30,12 @@
         <textarea name="cuisine" placeholder="Cuisine type"
             class="form-control">{{ request.form['cuisine'] }}</textarea>
     </div>
-    
-    <!-- <select name='cuisine' class="selectpicker">
-            "<option>American</option>"
-            "<option>Asian</option>"
-            "<option>Japanese</option>"
-            "<option>Korean</option>"
-            "<option>Italian</option>"
-    </select>   -->
         
     <!--This is for the dynamic boxes-->
     <select name='ingredients' class="selectpicker" multiple data-live-search="true">
         {% for ingredient in ingredients %}
-            "<option>{{  ingredient.name  }}</option>"
+            <!-- <option data-content="<input type='number' id='quantity' name='quantity' min='1' max='5'>" {{  ingredient.name  }}  </option> -->
+            <option>  {{  ingredient.name  }}  </option>
         {% endfor %}
     </select>   
 
