@@ -5,12 +5,6 @@ h1 {
     padding: 10px;
 }
 
-/*I don't think this is being used correctly in create.html*/
-.input-group {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 
 body, html {
     height: 100%;
@@ -22,24 +16,15 @@ body, html {
     .bg-img {
     /* The image used */
     background-image: url(/static/images/pretty.png);
-   /* Full height */
-   height: 100%;
+    /* Full height */
+    height: 100%;
 
-   /* Center and scale the image nicely */
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
    }
-    /* Add styles to the form container */
-    .container {
-     position: absolute;
-     left: 50%;
-     top: 50%;
-     -webkit-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
-    padding: 16px;
-    background-color: white;
-    }
+
     /* Full-width input fields */
     input[type=text], input[type=password] {
     width: 100%;
@@ -66,3 +51,56 @@ body, html {
     .btn:hover {
     opacity: 1;
     }
+
+
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+/* flip speed */
+.flipper {
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+
+/* hide back of pane during swap */
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-color: #181a1b;
+    background-size: cover;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+   padding: 16px;
+}
+
+/* back, initially hidden pane */
+.back {
+    background-color: #181a1b;
+    transform: rotateY(180deg);
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
